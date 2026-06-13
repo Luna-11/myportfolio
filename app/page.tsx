@@ -12,7 +12,14 @@ import {
   Globe,
   ChevronRight,
   Users,
-  ExternalLink,
+  GraduationCap,
+  Briefcase,
+  Heart,
+  Award,
+  Languages,
+  BookOpen,
+  PenTool,
+  Cpu,
 } from "lucide-react";
 
 const fadeInUp = {
@@ -62,46 +69,94 @@ const SectionTitle = ({ children }: { children: React.ReactNode }) => (
 );
 
 export default function Home() {
+  // Skills based on CV
   const skills = {
-    frontend: ["React", "TypeScript", "HTML", "CSS", "Figma", "Adobe XD"],
-    backend: ["Node.js", "Python", "C#", "Django", "GraphQL", "F#"],
-    database: ["SQL", "Azure", "API"],
-    tools: ["Git", "Visual Studio", "Photoshop", "ChartJS"],
+    programming: ["C Programming", "Java", "Python", "JavaScript", "TypeScript", "Basic Programming Concepts"],
+    design: ["Figma", "Graphic Design", "Adobe XD", "Photoshop", "High-Fidelity Designs"],
+    cloudTools: ["Azure Cognitive Services", "Google Workspace", "Microsoft Office", "CISCO Cybersecurity"],
+    languages: ["Burmese (Native)", "English (Fluent)", "Japanese (Beginner)"],
   };
+
+  // Education from CV
+  const education = [
+    {
+      degree: "Bachelor's Degree in Computer Science",
+      institution: "University of the People (USA) - Scholarship Awarded",
+      year: "2026 (currently)",
+      icon: <GraduationCap className="w-5 h-5" />,
+    },
+    {
+      degree: "Diploma in Computing",
+      institution: "Strategy First University",
+      year: "Completed (Level 4, 5)",
+      icon: <GraduationCap className="w-5 h-5" />,
+    },
+    {
+      degree: "Computer Science Engineering",
+      institution: "Myanmar Institute of Information Technology",
+      year: "2018 - 2020",
+      icon: <Cpu className="w-5 h-5" />,
+    },
+    {
+      degree: "High School Graduation",
+      institution: "KMC Private High School, Mandalay",
+      year: "2018",
+      icon: <BookOpen className="w-5 h-5" />,
+    },
+  ];
+
+  // Certifications from CV
+  const certifications = [
+    "Grammar and Punctuation of Advanced Writing - Coursera (2026)",
+    "Business Analysis & Process Management - Coursera (2025)",
+    "Computer Vision App with Azure Cognitive Services - Coursera (2025)",
+    "High-Fidelity Designs and Prototypes in Figma - Coursera (2025)",
+    "English for Career Development - UPenn (2023) (94.38%)",
+    "OMPT-D (Mathematics) - Passed (2023)",
+    "Complete Japanese Course for Beginners - Udemy (2021)",
+    "Introduction to Cybersecurity - CISCO (2020)",
+    "Java Certificate - SarLokPar (2020)",
+    "Graphic Design - MCC (2018)",
+  ];
 
   const services = [
     {
       icon: <Code2 className="w-8 h-8" />,
-      title: "Reasonable and flexible prices for clients",
-      description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas consequuntur iure.",
+      title: "System Analysis & Development",
+      description: "Experienced in analyzing systems and building intelligent applications to solve real-world problems.",
     },
     {
       icon: <Users className="w-8 h-8" />,
-      title: "Elaborating ideas in a discussion",
-      description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas consequuntur iure.",
+      title: "Teaching & Mentorship",
+      description: "Passionate about teaching programming and helping students develop logical thinking skills.",
     },
     {
       icon: <Palette className="w-8 h-8" />,
-      title: "Full of range design and motion services",
-      description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas consequuntur iure.",
+      title: "Design & Prototyping",
+      description: "Create high-fidelity designs and prototypes using Figma and modern design tools.",
+    },
+    {
+      icon: <Globe className="w-8 h-8" />,
+      title: "Translation (English-Burmese)",
+      description: "Professional translation services for digital content, maintaining quality and meeting deadlines.",
     },
   ];
 
   const projects = [
     {
-      title: "E-Commerce Platform",
-      description: "A full-stack e-commerce solution with React and Node.js",
-      tags: ["React", "Node.js", "MongoDB"],
+      title: "Computer Vision Application",
+      description: "Built computer vision app using Azure Cognitive Services for intelligent image analysis.",
+      tags: ["Azure", "Computer Vision", "AI"],
     },
     {
-      title: "Portfolio Dashboard",
-      description: "Interactive dashboard for creative professionals",
-      tags: ["Next.js", "Tailwind", "Framer"],
+      title: "Business Process Analysis",
+      description: "Process management and business analysis project focusing on workflow optimization.",
+      tags: ["Business Analysis", "Process Management", "Strategy"],
     },
     {
-      title: "Mobile App UI",
-      description: "Modern mobile interface design and implementation",
-      tags: ["Figma", "React Native", "Firebase"],
+      title: "High-Fidelity Prototypes",
+      description: "Created detailed interactive prototypes and designs using Figma for web applications.",
+      tags: ["Figma", "UI/UX", "Prototyping"],
     },
   ];
 
@@ -153,7 +208,7 @@ export default function Home() {
             transition={{ delay: 0.2 }}
             className="text-5xl md:text-7xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"
           >
-            Hello, I am Maha
+            Hello, I am Pann Ei Khin
           </motion.h1>
 
           <motion.p
@@ -162,17 +217,24 @@ export default function Home() {
             transition={{ delay: 0.3 }}
             className="text-2xl md:text-3xl text-gray-600 mb-6"
           >
-            Front End Developer
+            Computing Student | Aspiring Data Scientist & AI Enthusiast
           </motion.p>
 
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.4 }}
-            className="flex items-center justify-center gap-2 text-gray-500 mb-8"
+            className="flex flex-col md:flex-row items-center justify-center gap-2 text-gray-500 mb-8"
           >
-            <MapPin className="w-5 h-5" />
-            <span>Currently located in Pakistan</span>
+            <div className="flex items-center gap-2">
+              <MapPin className="w-5 h-5" />
+              <span>Mandalay, Myanmar</span>
+            </div>
+            <span className="hidden md:inline mx-2">•</span>
+            <div className="flex items-center gap-2">
+              <Mail className="w-5 h-5" />
+              <span>panneikhin11102001@gmail.com</span>
+            </div>
           </motion.div>
 
           <motion.p
@@ -181,7 +243,8 @@ export default function Home() {
             transition={{ delay: 0.5 }}
             className="text-lg text-gray-600 max-w-2xl mx-auto mb-10"
           >
-            I love building effective digital experiences on the web. Let's create something amazing together!
+            Motivated computing student with strong academic performance and practical experience in system analysis 
+            and emerging technologies. Passionate about data science, AI, and intelligent systems.
           </motion.p>
 
           <motion.div
@@ -194,7 +257,7 @@ export default function Home() {
               href="#contact"
               className="group px-8 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-full font-semibold hover:shadow-lg transition-all hover:scale-105 inline-flex items-center gap-2"
             >
-              Let's get in touch!
+              {`Let's connect`}
               <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition" />
             </a>
             <a
@@ -207,20 +270,67 @@ export default function Home() {
         </motion.div>
       </section>
 
-      {/* Skills Section */}
+      {/* Education Section */}
       <Section className="bg-white/50 backdrop-blur-sm">
+        <SectionTitle>Education & Certifications</SectionTitle>
+        <div className="max-w-6xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-8 mb-12">
+            <div>
+              <h3 className="text-2xl font-semibold mb-6 flex items-center gap-2">
+                <GraduationCap className="w-6 h-6 text-blue-500" /> Academic Background
+              </h3>
+              <div className="space-y-6">
+                {education.map((edu, idx) => (
+                  <motion.div
+                    key={idx}
+                    variants={fadeInUp}
+                    className="flex items-start gap-4 p-4 bg-white rounded-xl shadow-md"
+                  >
+                    <div className="text-blue-500 mt-1">{edu.icon}</div>
+                    <div>
+                      <h4 className="font-semibold text-lg">{edu.degree}</h4>
+                      <p className="text-gray-600">{edu.institution}</p>
+                      <p className="text-sm text-gray-400">{edu.year}</p>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+            <div>
+              <h3 className="text-2xl font-semibold mb-6 flex items-center gap-2">
+                <Award className="w-6 h-6 text-purple-500" /> Certifications
+              </h3>
+              <div className="space-y-2 max-h-96 overflow-y-auto pr-2">
+                {certifications.map((cert, idx) => (
+                  <motion.div
+                    key={idx}
+                    variants={fadeInUp}
+                    className="flex items-center gap-2 text-sm text-gray-700 p-2 hover:bg-white rounded-lg transition"
+                  >
+                    <ChevronRight className="w-4 h-4 text-green-500 flex-shrink-0" />
+                    <span>{cert}</span>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </Section>
+
+      {/* Skills Section */}
+      <Section>
         <SectionTitle>Skills & Tools</SectionTitle>
         <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
-          For a more detailed overview, please feel free to check the tools that were used on a per-project basis.
+          Based on my academic journey and hands-on experience with various technologies and tools.
         </p>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
           <div className="space-y-4">
             <h3 className="text-xl font-semibold flex items-center gap-2">
-              <Code2 className="w-5 h-5 text-blue-500" /> Frontend
+              <Code2 className="w-5 h-5 text-blue-500" /> Programming
             </h3>
             <div className="flex flex-wrap gap-2">
-              {skills.frontend.map((skill) => (
+              {skills.programming.map((skill) => (
                 <span key={skill} className="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm">
                   {skill}
                 </span>
@@ -230,10 +340,23 @@ export default function Home() {
 
           <div className="space-y-4">
             <h3 className="text-xl font-semibold flex items-center gap-2">
-              <Server className="w-5 h-5 text-green-500" /> Backend
+              <PenTool className="w-5 h-5 text-orange-500" /> Design & Prototyping
             </h3>
             <div className="flex flex-wrap gap-2">
-              {skills.backend.map((skill) => (
+              {skills.design.map((skill) => (
+                <span key={skill} className="px-3 py-1 bg-orange-100 text-orange-700 rounded-full text-sm">
+                  {skill}
+                </span>
+              ))}
+            </div>
+          </div>
+
+          <div className="space-y-4">
+            <h3 className="text-xl font-semibold flex items-center gap-2">
+              <Server className="w-5 h-5 text-green-500" /> Cloud & Tools
+            </h3>
+            <div className="flex flex-wrap gap-2">
+              {skills.cloudTools.map((skill) => (
                 <span key={skill} className="px-3 py-1 bg-green-100 text-green-700 rounded-full text-sm">
                   {skill}
                 </span>
@@ -243,24 +366,11 @@ export default function Home() {
 
           <div className="space-y-4">
             <h3 className="text-xl font-semibold flex items-center gap-2">
-              <Database className="w-5 h-5 text-purple-500" /> Database & Cloud
+              <Languages className="w-5 h-5 text-purple-500" /> Languages
             </h3>
             <div className="flex flex-wrap gap-2">
-              {skills.database.map((skill) => (
+              {skills.languages.map((skill) => (
                 <span key={skill} className="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm">
-                  {skill}
-                </span>
-              ))}
-            </div>
-          </div>
-
-          <div className="space-y-4">
-            <h3 className="text-xl font-semibold flex items-center gap-2">
-              <Palette className="w-5 h-5 text-orange-500" /> Tools & Design
-            </h3>
-            <div className="flex flex-wrap gap-2">
-              {skills.tools.map((skill) => (
-                <span key={skill} className="px-3 py-1 bg-orange-100 text-orange-700 rounded-full text-sm">
                   {skill}
                 </span>
               ))}
@@ -269,10 +379,76 @@ export default function Home() {
         </div>
       </Section>
 
+      {/* Experience Section */}
+      <Section className="bg-white/50 backdrop-blur-sm">
+        <SectionTitle>Experience & Leadership</SectionTitle>
+        <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+          <div>
+            <h3 className="text-2xl font-semibold mb-6 flex items-center gap-2">
+              <Briefcase className="w-6 h-6 text-blue-500" /> Work Experience
+            </h3>
+            <motion.div variants={fadeInUp} className="bg-white rounded-xl p-6 shadow-md">
+              <h4 className="font-semibold text-lg">Freelance Translator (English-Burmese)</h4>
+              <p className="text-gray-500 text-sm">Remote | 2019 - 2022</p>
+              <ul className="mt-3 space-y-2 text-gray-600">
+                <li className="flex items-start gap-2"><ChevronRight className="w-4 h-4 mt-1 text-blue-500"/>Translated Korean manhwa (digital comics) into Burmese</li>
+                <li className="flex items-start gap-2"><ChevronRight className="w-4 h-4 mt-1 text-blue-500"/>Worked with digital text editing tools to integrate translated content</li>
+                <li className="flex items-start gap-2"><ChevronRight className="w-4 h-4 mt-1 text-blue-500"/>Delivered translations within deadlines while maintaining high quality</li>
+              </ul>
+            </motion.div>
+          </div>
+          <div>
+            <h3 className="text-2xl font-semibold mb-6 flex items-center gap-2">
+              <Heart className="w-6 h-6 text-purple-500" /> Volunteer Experience
+            </h3>
+            <div className="space-y-4">
+              <motion.div variants={fadeInUp} className="bg-white rounded-xl p-6 shadow-md">
+                <h4 className="font-semibold text-lg">English Tutor (Volunteer)</h4>
+                <p className="text-gray-500 text-sm">Neighborhood Kids | 2015-2016</p>
+                <p className="mt-2 text-gray-600">Taught basic English skills, helped improve vocabulary and communication.</p>
+              </motion.div>
+              <motion.div variants={fadeInUp} className="bg-white rounded-xl p-6 shadow-md">
+                <h4 className="font-semibold text-lg">C Programming Instructor (Volunteer)</h4>
+                <p className="text-gray-500 text-sm">Start Smart | 2021 (3 months)</p>
+                <p className="mt-2 text-gray-600">Taught programming basics (variables, loops, functions), assisted with debugging.</p>
+              </motion.div>
+            </div>
+          </div>
+        </div>
+
+        <div className="max-w-6xl mx-auto mt-8">
+          <h3 className="text-2xl font-semibold mb-6 flex items-center gap-2">
+            <Users className="w-6 h-6 text-green-500" /> Leadership & Activities
+          </h3>
+          <div className="grid md:grid-cols-2 gap-6">
+            <motion.div variants={fadeInUp} className="bg-white rounded-xl p-6 shadow-md">
+              <h4 className="font-semibold text-lg">Member of Executive Committee</h4>
+              <p className="text-gray-500 text-sm">MITT (Myanmar Institute of Information Technology) | 2018-2019</p>
+              <ul className="mt-2 text-gray-600">
+                <li>• Represented and coordinated communication between students and faculty</li>
+                <li>• Assisted in organizing university activities and student events</li>
+              </ul>
+            </motion.div>
+            <motion.div variants={fadeInUp} className="bg-white rounded-xl p-6 shadow-md">
+              <h4 className="font-semibold text-lg">Leader - Art Club</h4>
+              <p className="text-gray-500 text-sm">MIT (Myanmar Institute of Information Technology) | 2020</p>
+              <ul className="mt-2 text-gray-600">
+                <li>• Organized art-related activities and collaborative projects</li>
+                <li>• Managed club members and coordinated club meetings</li>
+              </ul>
+            </motion.div>
+          </div>
+          <motion.div variants={fadeInUp} className="mt-6 bg-gradient-to-r from-yellow-50 to-orange-50 rounded-xl p-6 border border-yellow-200">
+            <h4 className="font-semibold text-lg flex items-center gap-2"><Award className="w-5 h-5 text-yellow-600"/> Academic Achievement</h4>
+            <p className="text-gray-700">Nationalist of ASCIS Cybersecurity Competition (2021) - Team Bermuda</p>
+          </motion.div>
+        </div>
+      </Section>
+
       {/* Services Section */}
       <Section>
         <SectionTitle>What I Offer</SectionTitle>
-        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
           {services.map((service, index) => (
             <motion.div
               key={index}
@@ -290,11 +466,11 @@ export default function Home() {
         </div>
       </Section>
 
-      {/* Work Section */}
+      {/* Work Section - Projects */}
       <Section className="bg-white/50" id="work">
-        <SectionTitle>Featured Work</SectionTitle>
+        <SectionTitle>Featured Projects</SectionTitle>
         <p className="text-center text-gray-600 mb-12">
-          Take a look at what we've created and be inspired by
+          Hands-on projects from my learning journey and certifications
         </p>
 
         <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
@@ -306,7 +482,9 @@ export default function Home() {
               className="bg-white rounded-xl overflow-hidden shadow-lg"
             >
               <div className="h-48 bg-gradient-to-br from-blue-400 to-purple-500 flex items-center justify-center">
-                <Globe className="w-16 h-16 text-white opacity-80" />
+                {index === 0 && <Cpu className="w-16 h-16 text-white opacity-80" />}
+                {index === 1 && <Database className="w-16 h-16 text-white opacity-80" />}
+                {index === 2 && <Palette className="w-16 h-16 text-white opacity-80" />}
               </div>
               <div className="p-6">
                 <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
@@ -322,22 +500,13 @@ export default function Home() {
             </motion.div>
           ))}
         </div>
-
-        <div className="text-center mt-12">
-          <a
-            href="#"
-            className="inline-flex items-center gap-2 text-blue-600 font-semibold hover:gap-3 transition-all"
-          >
-            See more projects <ExternalLink className="w-4 h-4" />
-          </a>
-        </div>
       </Section>
 
       {/* Contact Section */}
       <Section id="contact">
-        <SectionTitle>Let's talk about your project</SectionTitle>
+        <SectionTitle>{`Let's talk about your project`}</SectionTitle>
         <div className="max-w-2xl mx-auto bg-white rounded-2xl p-8 shadow-xl">
-          <form className="space-y-6">
+          <form className="space-y-6" action="mailto:panneikhin11102001@gmail.com" method="post" encType="text/plain">
             <div>
               <label className="block text-sm font-medium mb-2">Name</label>
               <input
@@ -373,17 +542,17 @@ export default function Home() {
           <div className="mt-8 pt-8 border-t border-gray-200">
             <div className="flex flex-col items-center gap-4">
               <a
-                href="#"
+                href="mailto:panneikhin11102001@gmail.com"
                 className="flex items-center gap-2 text-gray-600 hover:text-blue-600 transition-colors"
               >
-                <Mail className="w-5 h-5" /> maha@frontend.dev
+                <Mail className="w-5 h-5" /> panneikhin11102001@gmail.com
               </a>
               <div className="flex gap-6">
                 <a href="#" className="text-gray-600 hover:text-blue-600 transition-colors">
-                  
+                  LinkedIn
                 </a>
                 <a href="#" className="text-gray-600 hover:text-blue-600 transition-colors">
-                  
+                  GitHub
                 </a>
               </div>
             </div>
@@ -393,7 +562,8 @@ export default function Home() {
 
       {/* Footer */}
       <footer className="py-8 text-center text-gray-500 border-t border-gray-200">
-        <p>&copy; 2024 Maha - Front End Developer. All rights reserved.</p>
+        <p>&copy; 2024 Pann Ei Khin - Computing Student & Aspiring Data Scientist. All rights reserved.</p>
+        <p className="text-sm mt-2">📍 Mandalay, Myanmar | 📧 panneikhin11102001@gmail.com | 📞 +95 9796301405</p>
       </footer>
     </main>
   );
