@@ -9,16 +9,13 @@ import {
   Mail,
   MapPin,
   Phone,
-  Award,
   Users,
   Menu,
   X,
-  CheckCircle,
   Heart,
   Coffee,
   Star,
   Briefcase,
-  GraduationCap,
   Languages,
   Cpu,
   TrendingUp,
@@ -175,71 +172,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Education Section */}
-      <section className="px-4 py-16 bg-[#3f2a47]/5 border-y border-[#3f2a47]/10">
-        <div className="container mx-auto max-w-6xl">
-          <div className="text-center mb-10">
-            <h2 className="text-3xl font-bold mb-3 text-[#3f2a47]">Education &amp; Certifications</h2>
-            <div className="w-20 h-1 bg-[#3f2a47] mx-auto rounded-full" />
-            <p className="text-[#3f2a47]/60 mt-3">Continuous learner with scholarship achievements</p>
-          </div>
-          
-          <div className="grid gap-6 md:grid-cols-2">
-            {/* Formal Education */}
-            <div className="bg-[#f9f7f1] rounded-2xl p-6 shadow-sm border border-[#3f2a47]/10 hover:shadow-md transition-shadow">
-              <div className="flex items-center gap-3 mb-4">
-                <div className="p-2 bg-[#3f2a47]/10 rounded-xl">
-                  <GraduationCap className="h-5 w-5 text-[#3f2a47]" />
-                </div>
-                <h3 className="text-xl font-semibold text-[#3f2a47]">Formal Education</h3>
-              </div>
-              <ul className="space-y-4">
-                <li className="border-l-2 border-[#3f2a47]/30 pl-4">
-                  <p className="font-semibold text-[#3f2a47]">University of the People (USA)</p>
-                  <p className="text-sm text-[#3f2a47]/60">Scholarship Awarded — 2026 (current)</p>
-                </li>
-                <li className="border-l-2 border-[#3f2a47]/30 pl-4">
-                  <p className="font-semibold text-[#3f2a47]">Strategy First University</p>
-                  <p className="text-sm text-[#3f2a47]/60">Diploma in Computing (Level 4 &amp; 5) — Completed</p>
-                </li>
-                <li className="border-l-2 border-[#3f2a47]/30 pl-4">
-                  <p className="font-semibold text-[#3f2a47]">Myanmar Institute of Information Technology</p>
-                  <p className="text-sm text-[#3f2a47]/60">Computer Science Engineering — 2018-2020</p>
-                </li>
-              </ul>
-            </div>
 
-            {/* Certifications */}
-            <div className="bg-[#f9f7f1] rounded-2xl p-6 shadow-sm border border-[#3f2a47]/10 hover:shadow-md transition-shadow">
-              <div className="flex items-center gap-3 mb-4">
-                <div className="p-2 bg-[#3f2a47]/10 rounded-xl">
-                  <Award className="h-5 w-5 text-[#3f2a47]" />
-                </div>
-                <h3 className="text-xl font-semibold text-[#3f2a47]">Certifications</h3>
-              </div>
-              <div className="max-h-80 overflow-y-auto space-y-2 pr-2">
-                {[
-                  "Grammar & Punctuation of Advanced Writing — Coursera (2026)",
-                  "Business Analysis & Process Management — Coursera (2025)",
-                  "Build Computer Vision App with Azure — Coursera (2025)",
-                  "High-Fidelity Designs in Figma — Coursera (2025)",
-                  "English for Career Development — UPenn (2023) 94.38%",
-                  "OMPT-D (Mathematics) — Passed (2023)",
-                  "Introduction to Cybersecurity — CISCO (2020)",
-                  "Java Certification — SarLokPar (2020)",
-                  "Graphic Design — MCC (2018)",
-                  "Complete Japanese Course — Udemy (2021)"
-                ].map((cert, idx) => (
-                  <div key={idx} className="flex items-start gap-2 text-sm">
-                    <CheckCircle className="h-4 w-4 text-[#3f2a47] mt-0.5 flex-shrink-0" />
-                    <span className="text-[#3f2a47]/70">{cert}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* Skills Section */}
       <section id="skills" className="px-4 py-16 bg-[#f9f7f1]">
@@ -316,10 +249,24 @@ export default function Home() {
           <div className="grid gap-6 md:grid-cols-2">
             {/* Work Experience */}
             <div className="bg-[#f9f7f1] rounded-2xl p-6 shadow-sm border border-[#3f2a47]/10">
+
               <div className="flex items-center gap-3 mb-4">
                 <Briefcase className="h-5 w-5 text-[#3f2a47]" />
                 <h3 className="text-xl font-semibold text-[#3f2a47]">Work Experience</h3>
               </div>
+              
+              <div className="space-y-4">
+                <div className="border-l-2 border-[#3f2a47]/30 pl-4">
+                  <p className="font-semibold text-[#3f2a47]">System Analyst(NeuraOne)</p>
+                  <p className="text-sm text-[#3f2a47]/60">Remote | April 2025 - June 2026</p>
+                  <ul className="text-sm text-[#3f2a47]/70 mt-2 space-y-1 list-disc list-inside">
+                    <li>Requirement Gathering and Communication with Clients</li>
+                    <li>Scope Research and Design Reference Research</li>
+                    <li>Check Design stages & Delivered high-quality Prototypes within deadlines</li>
+                  </ul>
+                </div>
+              </div>
+<br></br>
               <div className="space-y-4">
                 <div className="border-l-2 border-[#3f2a47]/30 pl-4">
                   <p className="font-semibold text-[#3f2a47]">Freelance Translator (English-Burmese)</p>
@@ -351,7 +298,7 @@ export default function Home() {
                 </div>
                 <div className="border-l-2 border-[#3f2a47]/30 pl-4">
                   <p className="font-semibold text-[#3f2a47]">English Tutor</p>
-                  <p className="text-sm text-[#3f2a47]/60">Neighborhood Kids | 2015-2016</p>
+                  <p className="text-sm text-[#3f2a47]/60">Young Learners| 2015-2016</p>
                   <ul className="text-sm text-[#3f2a47]/70 mt-2 space-y-1 list-disc list-inside">
                     <li>Taught basic English skills during summer holidays</li>
                     <li>Developed teaching materials and exercises</li>
@@ -369,12 +316,12 @@ export default function Home() {
               <div className="grid md:grid-cols-2 gap-4">
                 <div className="bg-[#3f2a47]/5 rounded-xl p-4 border border-[#3f2a47]/10">
                   <p className="font-semibold text-[#3f2a47]">Executive Committee Member</p>
-                  <p className="text-sm text-[#3f2a47]/60">MITT | 2018-2019</p>
+                  <p className="text-sm text-[#3f2a47]/60">MIIT | 2018-2019</p>
                   <p className="text-sm text-[#3f2a47]/70 mt-1">Represented students and coordinated with faculty, organized university activities</p>
                 </div>
                 <div className="bg-[#3f2a47]/5 rounded-xl p-4 border border-[#3f2a47]/10">
                   <p className="font-semibold text-[#3f2a47]">Art Club Leader</p>
-                  <p className="text-sm text-[#3f2a47]/60">MIT | 2020</p>
+                  <p className="text-sm text-[#3f2a47]/60">MIIT | 2020</p>
                   <p className="text-sm text-[#3f2a47]/70 mt-1">Managed club members and organized art-related collaborative projects</p>
                 </div>
               </div>
