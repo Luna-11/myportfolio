@@ -1,4 +1,3 @@
-// app/projects/page.tsx
 "use client";
 
 import { useState } from "react";
@@ -15,7 +14,31 @@ export default function ProjectsPage() {
 
   const projects = [
     {
-      id: 1,
+      id: "study-with-me",
+      title: "Study With Me",
+      description: "An interactive study platform designed for students to stay focused, track progress, and collaborate with peers.",
+      longDescription: "Built with Next.js and TailwindCSS, this platform features real-time study timers, task management, group study rooms, and progress tracking. Includes Pomodoro timer, note-taking capabilities, and achievement badges to keep students motivated.",
+      tags: ["Next.js", "React", "TailwindCSS", "WebSockets", "Firebase"],
+      category: "web",
+      image: "📚",
+      github: "https://github.com/yourusername/study-with-me",
+      demo: "https://study-with-me-demo.com",
+      featured: true
+    },
+    {
+      id: "cooking-recipes",
+      title: "Cooking Recipes Sharing",
+      description: "A vibrant community platform where food lovers share, discover, and rate delicious recipes from around the world.",
+      longDescription: "Developed using React and Node.js with MongoDB, this platform allows users to create profiles, upload recipes with photos, rate recipes, and save favorites. Features include ingredient-based search, dietary filters, and step-by-step cooking instructions.",
+      tags: ["React", "Node.js", "MongoDB", "Express", "Cloudinary"],
+      category: "web",
+      image: "🍳",
+      github: "https://github.com/yourusername/recipe-sharing",
+      demo: "https://recipe-sharing-demo.com",
+      featured: true
+    },
+    {
+      id: "ai-resume-screener",
       title: "AI-Powered Resume Screener",
       description: "An intelligent system that automatically screens and ranks resumes based on job descriptions using natural language processing.",
       longDescription: "Built with Python and scikit-learn, this tool uses TF-IDF vectorization and cosine similarity to match resumes with job descriptions. Features include PDF parsing, keyword extraction, and a Streamlit dashboard for visualization.",
@@ -24,63 +47,6 @@ export default function ProjectsPage() {
       image: "🤖",
       github: "https://github.com/",
       demo: "https://demo.com",
-      featured: true
-    },
-    {
-      id: 2,
-      title: "Student Performance Analytics",
-      description: "Data analysis dashboard for tracking and predicting student academic performance using historical data.",
-      longDescription: "Developed using Pandas, Matplotlib, and Scikit-learn to analyze factors affecting student performance. Includes interactive visualizations and predictive models for early intervention.",
-      tags: ["Python", "Pandas", "Data Visualization", "Jupyter"],
-      category: "data",
-      image: "📊",
-      github: "https://github.com/",
-      demo: "https://demo.com",
-      featured: true
-    },
-    {
-      id: 3,
-      title: "Burmese Sign Language Recognition",
-      description: "Computer vision system for recognizing Burmese sign language gestures in real-time.",
-      longDescription: "Using TensorFlow and OpenCV, this project achieves 92% accuracy in recognizing 20+ common Burmese sign language gestures. Includes a web interface for real-time testing.",
-      tags: ["TensorFlow", "OpenCV", "Computer Vision", "Deep Learning"],
-      category: "ai",
-      image: "✋",
-      github: "https://github.com/",
-      featured: false
-    },
-    {
-      id: 4,
-      title: "Cloud Cost Optimizer",
-      description: "Tool for analyzing and optimizing cloud infrastructure costs across AWS and Azure.",
-      longDescription: "Built with Python and Boto3, this tool analyzes cloud usage patterns and provides recommendations for cost savings. Includes automated reporting and alerting system.",
-      tags: ["AWS", "Azure", "Python", "Cloud Computing"],
-      category: "cloud",
-      image: "☁️",
-      github: "https://github.com/",
-      demo: "https://demo.com",
-      featured: false
-    },
-    {
-      id: 5,
-      title: "E-Learning Platform API",
-      description: "RESTful API backend for an e-learning platform with course management and user authentication.",
-      longDescription: "Built with Node.js, Express, and MongoDB. Features include JWT authentication, course enrollment system, quiz management, and grade tracking.",
-      tags: ["Node.js", "Express", "MongoDB", "REST API"],
-      category: "web",
-      image: "🎓",
-      github: "https://github.com/",
-      featured: true
-    },
-    {
-      id: 6,
-      title: "Cybersecurity Threat Detector",
-      description: "Network intrusion detection system using machine learning algorithms.",
-      longDescription: "Implemented using Python and Scikit-learn with the NSL-KDD dataset. Achieves 95% accuracy in detecting various types of network attacks.",
-      tags: ["Python", "Cybersecurity", "ML", "Network"],
-      category: "security",
-      image: "🛡️",
-      github: "https://github.com/",
       featured: false
     }
   ];
@@ -88,10 +54,7 @@ export default function ProjectsPage() {
   const categories = [
     { id: "all", name: "All Projects", icon: "🎯" },
     { id: "ai", name: "AI & ML", icon: "🧠" },
-    { id: "data", name: "Data Science", icon: "📊" },
-    { id: "web", name: "Web Dev", icon: "🌐" },
-    { id: "cloud", name: "Cloud", icon: "☁️" },
-    { id: "security", name: "Security", icon: "🔒" }
+    { id: "web", name: "Web Dev", icon: "🌐" }
   ];
 
   const filteredProjects = filter === "all" 
@@ -101,7 +64,7 @@ export default function ProjectsPage() {
   const featuredProjects = projects.filter(p => p.featured);
 
   return (
-    <div className="min-h-screen bg-[#f0eada]">
+    <div className="min-h-screen bg-[#f9f7f1]">
       {/* Navigation Header */}
       <div className="sticky top-0 z-50 bg-[#f0eada]/95 backdrop-blur-md border-b border-[#3f2a47]/20">
         <div className="container mx-auto px-4 py-4 max-w-6xl">
@@ -126,7 +89,7 @@ export default function ProjectsPage() {
             Projects &amp; Case Studies
           </h1>
           <p className="text-lg text-[#3f2a47]/70 max-w-2xl mx-auto">
-            A collection of my work in data science, AI, and software development. 
+            A collection of my work in web development, data science, and AI. 
             Each project represents a unique challenge and solution.
           </p>
         </div>
@@ -145,10 +108,18 @@ export default function ProjectsPage() {
           
           <div className="grid md:grid-cols-2 gap-6">
             {featuredProjects.map((project) => (
-              <div key={project.id} className="bg-white rounded-2xl shadow-sm border border-[#3f2a47]/10 overflow-hidden hover:shadow-md transition-all">
-                <div className="p-6">
+              <div 
+                key={project.id} 
+                className="group bg-white rounded-2xl shadow-sm border border-[#3f2a47]/10 overflow-hidden hover:shadow-md transition-all hover:-translate-y-1 duration-200"
+              >
+                <Link 
+                  href={`/projects/${project.id}`}
+                  className="block p-6"
+                >
                   <div className="text-6xl mb-4">{project.image}</div>
-                  <h3 className="text-xl font-bold text-[#3f2a47] mb-2">{project.title}</h3>
+                  <h3 className="text-xl font-bold text-[#3f2a47] mb-2 group-hover:text-[#3f2a47]/80 transition-colors">
+                    {project.title}
+                  </h3>
                   <p className="text-[#3f2a47]/70 mb-4">{project.description}</p>
                   <div className="flex flex-wrap gap-2 mb-4">
                     {project.tags.slice(0, 3).map((tag) => (
@@ -157,16 +128,32 @@ export default function ProjectsPage() {
                       </span>
                     ))}
                   </div>
-                  <div className="flex gap-3">
-                    <a href={project.github} className="inline-flex items-center gap-1 text-sm text-[#3f2a47] hover:text-[#3f2a47]/70">
-                    
-                    </a>
-                    {project.demo && (
-                      <a href={project.demo} className="inline-flex items-center gap-1 text-sm text-[#3f2a47] hover:text-[#3f2a47]/70">
-                        <ExternalLink className="h-4 w-4" /> Demo
-                      </a>
-                    )}
+                  <div className="flex items-center gap-2 text-sm text-[#3f2a47]/60 group-hover:text-[#3f2a47] transition-colors">
+                    <ExternalLink className="h-4 w-4" />
+                    View Details →
                   </div>
+                </Link>
+                <div className="px-6 pb-6 pt-2 flex gap-4 border-t border-[#3f2a47]/5">
+                  <a 
+                    href={project.github} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 text-xs text-[#3f2a47]/60 hover:text-[#3f2a47] transition-colors"
+                  >
+                    
+                    Source
+                  </a>
+                  {project.demo && (
+                    <a 
+                      href={project.demo} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 text-xs text-[#3f2a47]/60 hover:text-[#3f2a47] transition-colors"
+                    >
+                      <ExternalLink className="h-3.5 w-3.5" />
+                      Demo
+                    </a>
+                  )}
                 </div>
               </div>
             ))}
@@ -201,10 +188,18 @@ export default function ProjectsPage() {
         <div className="container mx-auto max-w-6xl">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {filteredProjects.map((project) => (
-              <div key={project.id} className="bg-white rounded-xl shadow-sm border border-[#3f2a47]/10 overflow-hidden hover:shadow-md transition-all group">
-                <div className="p-5">
+              <div
+                key={project.id}
+                className="group bg-white rounded-xl shadow-sm border border-[#3f2a47]/10 overflow-hidden hover:shadow-md transition-all hover:-translate-y-1 duration-200"
+              >
+                <Link
+                  href={`/projects/${project.id}`}
+                  className="block p-5"
+                >
                   <div className="text-5xl mb-3">{project.image}</div>
-                  <h3 className="text-lg font-bold text-[#3f2a47] mb-2">{project.title}</h3>
+                  <h3 className="text-lg font-bold text-[#3f2a47] mb-2 group-hover:text-[#3f2a47]/80 transition-colors">
+                    {project.title}
+                  </h3>
                   <p className="text-sm text-[#3f2a47]/70 mb-3">{project.description}</p>
                   <div className="flex flex-wrap gap-1.5 mb-3">
                     {project.tags.map((tag) => (
@@ -213,16 +208,32 @@ export default function ProjectsPage() {
                       </span>
                     ))}
                   </div>
-                  <div className="flex gap-3 pt-2 border-t border-[#3f2a47]/10">
-                    <a href={project.github} className="inline-flex items-center gap-1 text-xs text-[#3f2a47] hover:text-[#3f2a47]/70">
-                      Source
-                    </a>
-                    {project.demo && (
-                      <a href={project.demo} className="inline-flex items-center gap-1 text-xs text-[#3f2a47] hover:text-[#3f2a47]/70">
-                        <ExternalLink className="h-3.5 w-3.5" /> Live Demo
-                      </a>
-                    )}
+                  <div className="flex items-center gap-2 text-xs text-[#3f2a47]/60 group-hover:text-[#3f2a47] transition-colors">
+                    <ExternalLink className="h-3.5 w-3.5" />
+                    View Project →
                   </div>
+                </Link>
+                <div className="px-5 pb-5 pt-2 flex gap-4 border-t border-[#3f2a47]/5">
+                  <a 
+                    href={project.github} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 text-xs text-[#3f2a47]/60 hover:text-[#3f2a47] transition-colors"
+                  >
+                    
+                    GitHub
+                  </a>
+                  {project.demo && (
+                    <a 
+                      href={project.demo} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 text-xs text-[#3f2a47]/60 hover:text-[#3f2a47] transition-colors"
+                    >
+                      <ExternalLink className="h-3.5 w-3.5" />
+                      Demo
+                    </a>
+                  )}
                 </div>
               </div>
             ))}
@@ -243,7 +254,7 @@ export default function ProjectsPage() {
           <h2 className="text-2xl font-bold text-[#3f2a47] mb-6">Open Source Contributions</h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-2xl mx-auto">
             <div className="text-center">
-              <div className="text-3xl font-bold text-[#3f2a47]">10+</div>
+              <div className="text-3xl font-bold text-[#3f2a47]">12+</div>
               <div className="text-sm text-[#3f2a47]/60">GitHub Repos</div>
             </div>
             <div className="text-center">
@@ -255,7 +266,7 @@ export default function ProjectsPage() {
               <div className="text-sm text-[#3f2a47]/60">Contributions</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-[#3f2a47]">2</div>
+              <div className="text-3xl font-bold text-[#3f2a47]">5</div>
               <div className="text-sm text-[#3f2a47]/60">Stars ⭐</div>
             </div>
           </div>
@@ -266,7 +277,7 @@ export default function ProjectsPage() {
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 bg-[#3f2a47] text-[#f0eada] px-6 py-3 rounded-lg font-medium hover:bg-[#3f2a47]/90 transition-all"
             >
-             
+              
               View My GitHub Profile
             </a>
           </div>

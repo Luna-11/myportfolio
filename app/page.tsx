@@ -80,7 +80,7 @@ export default function Home() {
       </nav>
 
       {/* Hero Section */}
-      <section id="home" className="relative overflow-hidden px-4 pt-32 pb-20 md:pt-40 md:pb-32">
+      <section id="home" className="relative overflow-hidden px-2 pt-32 pb-20 md:pt-30 md:pb-32">
         <div className="absolute inset-0 bg-grid-slate-900/[0.04] bg-[size:40px_40px]" />
         <div className="absolute top-20 right-10 w-72 h-72 bg-[#3f2a47]/10 rounded-full blur-3xl" />
         <div className="absolute bottom-20 left-10 w-72 h-72 bg-[#3f2a47]/10 rounded-full blur-3xl" />
@@ -94,10 +94,10 @@ export default function Home() {
               Hello, <br />
               I am <span className="text-[#3f2a47]">Pann Ei Khin</span>,
               <br />
-              <span className="text-3xl md:text-5xl text-[#3f2a47]/70">Computing Student &amp; Aspiring Data Scientist</span>
+              <span className="text-3xl md:text-5xl text-[#3f2a47]/70">Computing Student &amp; System Analyst</span>
             </h1>
             <p className="mb-8 max-w-2xl text-lg text-[#3f2a47]/60">
-              Based in Mandalay, Myanmar. Passionate about data science, AI, and intelligent systems — 
+              Based in Mandalay, Myanmar. Passionate about websites, applications, data science, and AI — 
               applying technology to solve real-world problems.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
