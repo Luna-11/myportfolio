@@ -21,39 +21,25 @@ export default function ProjectsPage() {
       tags: ["Next.js", "React", "TailwindCSS", "WebSockets", "Firebase"],
       category: "web",
       image: "📚",
-      github: "https://github.com/yourusername/study-with-me",
-      demo: "https://study-with-me-demo.com",
+      github: "https://github.com/Luna-11/cptesting",
+      demo: "https://cptesting.vercel.app/",
       featured: true
     },
     {
       id: "cooking-recipes",
       title: "Cooking Recipes Sharing",
       description: "A vibrant community platform where food lovers share, discover, and rate delicious recipes from around the world.",
-      longDescription: "Developed using React and Node.js with MongoDB, this platform allows users to create profiles, upload recipes with photos, rate recipes, and save favorites. Features include ingredient-based search, dietary filters, and step-by-step cooking instructions.",
-      tags: ["React", "Node.js", "MongoDB", "Express", "Cloudinary"],
+      longDescription: "Developed with PHP and vanilla JavaScript, this platform allows users to create profiles, upload recipes with photos, rate recipes, and save favorites. Features include ingredient-based search, dietary filters, and step-by-step cooking instructions.",
+      tags: ["PHP", "JavaScript", "MySQL", "HTML5", "CSS3"],
       category: "web",
       image: "🍳",
-      github: "https://github.com/yourusername/recipe-sharing",
-      demo: "https://recipe-sharing-demo.com",
+      github: "https://github.com/Luna-11/BEAssignment",
       featured: true
-    },
-    {
-      id: "ai-resume-screener",
-      title: "AI-Powered Resume Screener",
-      description: "An intelligent system that automatically screens and ranks resumes based on job descriptions using natural language processing.",
-      longDescription: "Built with Python and scikit-learn, this tool uses TF-IDF vectorization and cosine similarity to match resumes with job descriptions. Features include PDF parsing, keyword extraction, and a Streamlit dashboard for visualization.",
-      tags: ["Python", "NLP", "Machine Learning", "Streamlit"],
-      category: "ai",
-      image: "🤖",
-      github: "https://github.com/",
-      demo: "https://demo.com",
-      featured: false
     }
   ];
 
   const categories = [
     { id: "all", name: "All Projects", icon: "🎯" },
-    { id: "ai", name: "AI & ML", icon: "🧠" },
     { id: "web", name: "Web Dev", icon: "🌐" }
   ];
 
@@ -140,7 +126,6 @@ export default function ProjectsPage() {
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-1.5 text-xs text-[#3f2a47]/60 hover:text-[#3f2a47] transition-colors"
                   >
-                    
                     Source
                   </a>
                   {project.demo && (
@@ -220,7 +205,6 @@ export default function ProjectsPage() {
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-1.5 text-xs text-[#3f2a47]/60 hover:text-[#3f2a47] transition-colors"
                   >
-                    
                     GitHub
                   </a>
                   {project.demo && (
@@ -277,7 +261,6 @@ export default function ProjectsPage() {
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 bg-[#3f2a47] text-[#f0eada] px-6 py-3 rounded-lg font-medium hover:bg-[#3f2a47]/90 transition-all"
             >
-              
               View My GitHub Profile
             </a>
           </div>
