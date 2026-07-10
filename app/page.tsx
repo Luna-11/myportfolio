@@ -66,7 +66,7 @@ export default function Home() {
       title: "Flooring Services",
       icon: HomeIcon,
       description: "Project management & service delivery",
-      image: "/images/business.jpg", // Using business.jpg as fallback
+      image: "/images/flooring.jpg", // Using business.jpg as fallback
       gradient: "from-orange-500/40 to-orange-600/20",
     },
     {
