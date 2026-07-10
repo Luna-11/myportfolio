@@ -1,4 +1,3 @@
-// app/page.tsx - Complete portfolio page for Pann Ei Khin
 "use client";
 
 import { useState } from "react";
@@ -23,17 +22,17 @@ import {
   Zap,
   Terminal,
   Braces,
+  Globe,
+  ShoppingBag,
+  Home as HomeIcon,
+  Building2,
+  GraduationCap,
 } from "lucide-react";
 
 export default function Home() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const navItems = ["Home", "About", "Skills", "Experience", "Contact"];
-
-  // Extended monochrome palette:
-  // Whites: #FFFFFF, #F5F5F5, #E5E5E5
-  // Grays: #D4D4D4, #A3A3A3, #737373
-  // Blacks: #1C1C1C, #0A0A0A, #000000
 
   return (
     <div className="min-h-screen bg-[#F5F5F5] text-[#0A0A0A]">
@@ -87,11 +86,8 @@ export default function Home() {
 
         <div className="container relative mx-auto max-w-6xl">
           <div className="flex flex-col items-center text-center">
-            <div className="mb-6 rounded-full bg-[#0A0A0A] p-3 shadow-xl animate-pulse">
-              <Code2 className="h-8 w-8 text-white" />
-            </div>
-            <h1 className="mb-4 text-5xl font-bold tracking-tight md:text-7xl text-[#0A0A0A]">
-              Hello, <br />
+            <h1 className="mb-6 text-3xl font-bold tracking-tight md:text-7xl text-[#0A0A0A]">
+              Hello <br />
               I am <span className="text-[#0A0A0A]">Pann Ei Khin</span>,
               <br />
               <span className="text-3xl md:text-5xl text-[#0A0A0A]/60">Computing Student &amp; System Analyst</span>
@@ -149,6 +145,14 @@ export default function Home() {
                 Motivated computing student with strong academic performance and practical experience in system analysis
                 and emerging technologies. Passionate about data science, AI, and intelligent systems, with a strong
                 interest in applying technology to solve real-world problems.
+              </p>
+              <p className="text-[#0A0A0A]/60 leading-relaxed">
+                Experienced in system analysis across multiple domains including <strong className="text-[#0A0A0A]/80">Trading</strong>,
+                <strong className="text-[#0A0A0A]/80"> Travel &amp; Tour</strong>,
+                <strong className="text-[#0A0A0A]/80"> E-Commerce</strong>,
+                <strong className="text-[#0A0A0A]/80"> Flooring Services</strong>, and
+                <strong className="text-[#0A0A0A]/80"> Education Agency &amp; Consultant</strong> —
+                designing efficient and scalable solutions for diverse business needs.
               </p>
               <div className="flex flex-wrap gap-3 pt-4">
                 <div className="flex items-center gap-2 text-sm bg-white px-3 py-1 rounded-full text-[#0A0A0A] border border-[#0A0A0A]/10 shadow-sm">
@@ -244,67 +248,118 @@ export default function Home() {
             <div className="w-20 h-1 bg-[#0A0A0A] mx-auto rounded-full" />
           </div>
 
-          <div className="grid gap-6 md:grid-cols-2">
-            {/* Work Experience */}
+          <div className="grid gap-6">
+            {/* System Analysis Projects - Full width card */}
             <div className="bg-white rounded-2xl p-6 shadow-sm border border-[#0A0A0A]/10">
               <div className="flex items-center gap-3 mb-4">
                 <Briefcase className="h-5 w-5 text-[#0A0A0A]" />
-                <h3 className="text-xl font-semibold text-[#0A0A0A]">Work Experience</h3>
+                <h3 className="text-xl font-semibold text-[#0A0A0A]">System Analysis Projects</h3>
               </div>
-
-              <div className="space-y-4">
-                <div className="border-l-2 border-[#0A0A0A]/20 pl-4">
-                  <p className="font-semibold text-[#0A0A0A]">System Analyst (NeuraOne)</p>
-                  <p className="text-sm text-[#0A0A0A]/50">Remote | April 2025 - June 2026</p>
-                  <ul className="text-sm text-[#0A0A0A]/60 mt-2 space-y-1 list-disc list-inside">
-                    <li>Requirement Gathering and Communication with Clients</li>
-                    <li>Scope Research and Design Reference Research</li>
-                    <li>Check Design stages & Delivered high-quality Prototypes within deadlines</li>
-                  </ul>
+              <p className="text-[#0A0A0A]/60 mb-4">
+                Experienced in analyzing and designing systems across multiple domains, ensuring efficient and scalable solutions.
+              </p>
+              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                <div className="bg-[#F5F5F5] rounded-xl p-4 border border-[#0A0A0A]/5">
+                  <div className="flex items-center gap-2 mb-2">
+                    <TrendingUp className="h-5 w-5 text-[#0A0A0A]" />
+                    <span className="font-semibold text-[#0A0A0A]">Trading</span>
+                  </div>
+                  <p className="text-sm text-[#0A0A0A]/60">Analyzed trading platforms, optimized order flow, and improved data visualization for better decision-making.</p>
                 </div>
-              </div>
-              <div className="space-y-4 mt-4">
-                <div className="border-l-2 border-[#0A0A0A]/20 pl-4">
-                  <p className="font-semibold text-[#0A0A0A]">Freelance Translator (English-Burmese)</p>
-                  <p className="text-sm text-[#0A0A0A]/50">Remote | 2019-2022</p>
-                  <ul className="text-sm text-[#0A0A0A]/60 mt-2 space-y-1 list-disc list-inside">
-                    <li>Translated Korean manhwa (digital comics) into Burmese</li>
-                    <li>Worked with digital text editing tools for comic panel integration</li>
-                    <li>Delivered high-quality translations within deadlines</li>
-                  </ul>
+                <div className="bg-[#F5F5F5] rounded-xl p-4 border border-[#0A0A0A]/5">
+                  <div className="flex items-center gap-2 mb-2">
+                    <Globe className="h-5 w-5 text-[#0A0A0A]" />
+                    <span className="font-semibold text-[#0A0A0A]">Travel &amp; Tour</span>
+                  </div>
+                  <p className="text-sm text-[#0A0A0A]/60">Designed booking systems, itinerary management, and customer experience workflows for travel agencies.</p>
+                </div>
+                <div className="bg-[#F5F5F5] rounded-xl p-4 border border-[#0A0A0A]/5">
+                  <div className="flex items-center gap-2 mb-2">
+                    <ShoppingBag className="h-5 w-5 text-[#0A0A0A]" />
+                    <span className="font-semibold text-[#0A0A0A]">E-Commerce</span>
+                  </div>
+                  <p className="text-sm text-[#0A0A0A]/60">Built and analyzed online store systems, payment integrations, and inventory management solutions.</p>
+                </div>
+                <div className="bg-[#F5F5F5] rounded-xl p-4 border border-[#0A0A0A]/5">
+                  <div className="flex items-center gap-2 mb-2">
+                    <HomeIcon className="h-5 w-5 text-[#0A0A0A]" />
+                    <span className="font-semibold text-[#0A0A0A]">Flooring Services</span>
+                  </div>
+                  <p className="text-sm text-[#0A0A0A]/60">Developed systems for project management, client communication, and service delivery optimization.</p>
+                </div>
+                <div className="bg-[#F5F5F5] rounded-xl p-4 border border-[#0A0A0A]/5 sm:col-span-2 lg:col-span-1">
+                  <div className="flex items-center gap-2 mb-2">
+                    <Building2 className="h-5 w-5 text-[#0A0A0A]" />
+                    <span className="font-semibold text-[#0A0A0A]">Education Agency &amp; Consultant</span>
+                  </div>
+                  <p className="text-sm text-[#0A0A0A]/60">Analyzed and designed systems for academic advising, curriculum management, and education technology integration.</p>
                 </div>
               </div>
             </div>
 
-            {/* Volunteer Experience */}
-            <div className="bg-white rounded-2xl p-6 shadow-sm border border-[#0A0A0A]/10">
-              <div className="flex items-center gap-3 mb-4">
-                <Heart className="h-5 w-5 text-[#0A0A0A]" />
-                <h3 className="text-xl font-semibold text-[#0A0A0A]">Volunteer Experience</h3>
-              </div>
-              <div className="space-y-4">
-                <div className="border-l-2 border-[#0A0A0A]/20 pl-4">
-                  <p className="font-semibold text-[#0A0A0A]">C Programming Instructor</p>
-                  <p className="text-sm text-[#0A0A0A]/50">Start Smart | 2021 (3 months)</p>
-                  <ul className="text-sm text-[#0A0A0A]/60 mt-2 space-y-1 list-disc list-inside">
-                    <li>Taught C programming basics (variables, loops, functions)</li>
-                    <li>Assisted with coding exercises and debugging</li>
-                    <li>Developed logical thinking and problem-solving skills</li>
-                  </ul>
+            {/* Work and Volunteer Experience in 2-column grid */}
+            <div className="grid md:grid-cols-2 gap-6">
+              {/* Work Experience */}
+              <div className="bg-white rounded-2xl p-6 shadow-sm border border-[#0A0A0A]/10">
+                <div className="flex items-center gap-3 mb-4">
+                  <Briefcase className="h-5 w-5 text-[#0A0A0A]" />
+                  <h3 className="text-xl font-semibold text-[#0A0A0A]">Work Experience</h3>
                 </div>
-                <div className="border-l-2 border-[#0A0A0A]/20 pl-4">
-                  <p className="font-semibold text-[#0A0A0A]">English Tutor</p>
-                  <p className="text-sm text-[#0A0A0A]/50">Young Learners| 2015-2016</p>
-                  <ul className="text-sm text-[#0A0A0A]/60 mt-2 space-y-1 list-disc list-inside">
-                    <li>Taught basic English skills during summer holidays</li>
-                    <li>Developed teaching materials and exercises</li>
-                  </ul>
+
+                <div className="space-y-4">
+                  <div className="border-l-2 border-[#0A0A0A]/20 pl-4">
+                    <p className="font-semibold text-[#0A0A0A]">System Analyst (NeuraOne)</p>
+                    <p className="text-sm text-[#0A0A0A]/50">Remote | April 2025 - June 2026</p>
+                    <ul className="text-sm text-[#0A0A0A]/60 mt-2 space-y-1 list-disc list-inside">
+                      <li>Requirement Gathering and Communication with Clients</li>
+                      <li>Scope Research and Design Reference Research</li>
+                      <li>Check Design stages & Delivered high-quality Prototypes within deadlines</li>
+                    </ul>
+                  </div>
+                </div>
+                <div className="space-y-4 mt-4">
+                  <div className="border-l-2 border-[#0A0A0A]/20 pl-4">
+                    <p className="font-semibold text-[#0A0A0A]">Freelance Translator (English-Burmese)</p>
+                    <p className="text-sm text-[#0A0A0A]/50">Remote | 2019-2022</p>
+                    <ul className="text-sm text-[#0A0A0A]/60 mt-2 space-y-1 list-disc list-inside">
+                      <li>Translated Korean manhwa (digital comics) into Burmese</li>
+                      <li>Worked with digital text editing tools for comic panel integration</li>
+                      <li>Delivered high-quality translations within deadlines</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              {/* Volunteer Experience */}
+              <div className="bg-white rounded-2xl p-6 shadow-sm border border-[#0A0A0A]/10">
+                <div className="flex items-center gap-3 mb-4">
+                  <Heart className="h-5 w-5 text-[#0A0A0A]" />
+                  <h3 className="text-xl font-semibold text-[#0A0A0A]">Volunteer Experience</h3>
+                </div>
+                <div className="space-y-4">
+                  <div className="border-l-2 border-[#0A0A0A]/20 pl-4">
+                    <p className="font-semibold text-[#0A0A0A]">C Programming Instructor</p>
+                    <p className="text-sm text-[#0A0A0A]/50">Start Smart | 2021 (3 months)</p>
+                    <ul className="text-sm text-[#0A0A0A]/60 mt-2 space-y-1 list-disc list-inside">
+                      <li>Taught C programming basics (variables, loops, functions)</li>
+                      <li>Assisted with coding exercises and debugging</li>
+                      <li>Developed logical thinking and problem-solving skills</li>
+                    </ul>
+                  </div>
+                  <div className="border-l-2 border-[#0A0A0A]/20 pl-4">
+                    <p className="font-semibold text-[#0A0A0A]">English Tutor</p>
+                    <p className="text-sm text-[#0A0A0A]/50">Young Learners| 2015-2016</p>
+                    <ul className="text-sm text-[#0A0A0A]/60 mt-2 space-y-1 list-disc list-inside">
+                      <li>Taught basic English skills during summer holidays</li>
+                      <li>Developed teaching materials and exercises</li>
+                    </ul>
+                  </div>
                 </div>
               </div>
             </div>
 
             {/* Leadership */}
-            <div className="bg-white rounded-2xl p-6 shadow-sm border border-[#0A0A0A]/10 md:col-span-2">
+            <div className="bg-white rounded-2xl p-6 shadow-sm border border-[#0A0A0A]/10">
               <div className="flex items-center gap-3 mb-4">
                 <Star className="h-5 w-5 text-[#0A0A0A]" />
                 <h3 className="text-xl font-semibold text-[#0A0A0A]">Leadership &amp; Activities</h3>
