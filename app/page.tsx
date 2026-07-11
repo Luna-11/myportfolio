@@ -66,7 +66,7 @@ export default function Home() {
       title: "Flooring Services",
       icon: HomeIcon,
       description: "Project management & service delivery",
-      image: "/images/flooring.jpg", // Using business.jpg as fallback
+      image: "/images/flooring.jpg",
       gradient: "from-orange-500/40 to-orange-600/20",
     },
     {
@@ -291,63 +291,65 @@ export default function Home() {
             <div className="w-20 h-1 bg-[#0A0A0A] mx-auto rounded-full" />
           </div>
 
-          {/* System Analysis Projects - GLASS CARDS WITH IMAGES */}
+          {/* System Analysis Projects - STATIC IMAGES, TEXT ON HOVER */}
           <div className="mb-12">
             <div className="flex items-center gap-3 mb-6">
               <Briefcase className="h-6 w-6 text-[#0A0A0A]" />
               <h3 className="text-2xl font-semibold text-[#0A0A0A]">System Analysis Projects</h3>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-1">
               {systemProjects.map((project) => {
                 const Icon = project.icon;
                 return (
                   <div
                     key={project.id}
-                    className="group relative h-64 rounded-2xl overflow-hidden bg-white/70 backdrop-blur-md border border-white/30 shadow-lg hover:shadow-2xl transition-all duration-500 hover:scale-105 hover:z-10"
+                    className="group relative h-96 rounded-sm overflow-hidden bg-white/70 border border-white/30 shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-[1.02] hover:z-10 transform-gpu will-change-transform"
                   >
                     {/* Image Container - Full card */}
                     <div className="relative h-full w-full overflow-hidden">
-                      {/* Actual Image */}
+                      {/* Static Image - No scale on hover */}
                       <Image
                         src={project.image}
                         alt={project.title}
                         fill
-                        className="object-cover group-hover:scale-110 transition-transform duration-700"
+                        className="object-cover"
                         sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 20vw"
+                        priority={true}
+                        loading="eager"
+                        quality={75}
+                        placeholder="blur"
+                        blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCgAA//2Q=="
                       />
 
-                      {/* Gradient Overlay - makes text readable */}
+                      {/* Gradient Overlay - always visible */}
                       <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
 
-                      {/* Glass Effect Overlay - subtle on hover */}
-                      <div className="absolute inset-0 bg-white/5 backdrop-blur-[1px] group-hover:backdrop-blur-0 transition-all duration-500" />
 
-                      {/* Content - Always visible, positioned at bottom */}
-                      <div className="absolute bottom-0 left-0 right-0 p-4 transform transition-all duration-500 group-hover:translate-y-[-4px]">
-                        {/* Icon with badge */}
+                      <div className="absolute bottom-0 left-0 right-0 p-4">
+                        {/* Icon with badge - Hidden by default, appears on hover */}
                         <div className="flex items-center gap-2 mb-1">
-                          <div className="p-1.5 bg-white/20 backdrop-blur-md rounded-lg border border-white/20">
-                            <Icon className="h-4 w-4 text-white" />
+                          <div className="p-1.5 bg-white/20 backdrop-blur-md rounded-lg border border-white/20 transition-all duration-500 group-hover:bg-white/30 transform transition-all duration-300 opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0">
+                            <Icon className="h-4 w-4 text-white transition-transform duration-500 group-hover:scale-110" />
                           </div>
-                          <h4 className="font-semibold text-white text-sm">
+                          <h4 className="font-semibold text-white text-sm transform transition-all duration-300 opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0">
                             {project.title}
                           </h4>
                         </div>
 
-                        {/* Description - slides up on hover */}
-                        <p className="text-white/80 text-xs transform transition-all duration-500 opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0">
+                        {/* Description - Hidden by default, appears on hover */}
+                        <p className="text-white/80 text-xs transform transition-all duration-300 opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0">
                           {project.description}
                         </p>
 
-                        {/* Hover indicator arrow */}
-                        <div className="absolute right-4 top-0 opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-x-2 group-hover:translate-x-0">
+                        {/* Hover indicator arrow - appears on hover */}
+                        <div className="absolute right-4 top-0 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-x-2 group-hover:translate-x-0">
                           <ChevronRight className="h-4 w-4 text-white/60" />
                         </div>
                       </div>
 
-                      {/* Glass Glow Effect - on hover */}
-                      <div className={`absolute -bottom-20 -right-20 w-40 h-40 bg-gradient-to-br ${project.gradient} rounded-full blur-3xl opacity-0 group-hover:opacity-30 transition-opacity duration-700`} />
+                      {/* Glass Glow Effect - subtle on hover */}
+                      <div className={`absolute -bottom-20 -right-20 w-40 h-40 bg-gradient-to-br ${project.gradient} rounded-full blur-3xl opacity-0 group-hover:opacity-15 transition-opacity duration-300`} />
                     </div>
                   </div>
                 );
