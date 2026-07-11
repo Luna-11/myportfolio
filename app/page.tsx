@@ -472,7 +472,7 @@ export default function Home() {
                 LinkedIn
               </a>
               <a href="#" className="inline-flex items-center gap-2 text-white/70 hover:text-white transition-colors">
-                💼 Upwork
+                Upwork
               </a>
             </div>
           </div>
