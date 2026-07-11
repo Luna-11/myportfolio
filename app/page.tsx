@@ -325,20 +325,20 @@ export default function Home() {
                       {/* Gradient Overlay - always visible */}
                       <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
 
-
+                      {/* Content - All hidden until hover */}
                       <div className="absolute bottom-0 left-0 right-0 p-4">
                         {/* Icon with badge - Hidden by default, appears on hover */}
                         <div className="flex items-center gap-2 mb-1">
-                          <div className="p-1.5 bg-white/20 backdrop-blur-md rounded-lg border border-white/20 transition-all duration-500 group-hover:bg-white/30 transform transition-all duration-300 opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0">
-                            <Icon className="h-4 w-4 text-white transition-transform duration-500 group-hover:scale-110" />
+                          <div className="p-1.5 bg-white/20 backdrop-blur-md rounded-lg border border-white/20 group-hover:bg-white/30 transition-all duration-300 opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0">
+                            <Icon className="h-4 w-4 text-white group-hover:scale-110 transition-transform duration-300" />
                           </div>
-                          <h4 className="font-semibold text-white text-sm transform transition-all duration-300 opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0">
+                          <h4 className="font-semibold text-white text-sm transition-all duration-300 opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0">
                             {project.title}
                           </h4>
                         </div>
 
                         {/* Description - Hidden by default, appears on hover */}
-                        <p className="text-white/80 text-xs transform transition-all duration-300 opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0">
+                        <p className="text-white/80 text-xs transition-all duration-300 opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0">
                           {project.description}
                         </p>
 
